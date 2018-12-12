@@ -1,0 +1,9 @@
+sudo: required
+language: generic
+services:
+  - docker
+
+  script:
+  - docker build -t apporchestra/ionic-chrome-google-cloud .
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+  - docker push apporchestra/ionic-chrome-google-cloud
